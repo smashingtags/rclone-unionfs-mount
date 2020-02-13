@@ -1,0 +1,8 @@
+#!/usr/bin/with-contenv bash
+# shellcheck shell=bash
+
+# Copyright (c) 2019, PhysK
+# All rights reserved.
+
+echo "Shutting Down gdrive Mount"
+fusermount -u /mnt/gdrive

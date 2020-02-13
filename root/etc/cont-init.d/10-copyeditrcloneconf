@@ -1,0 +1,12 @@
+#!/usr/bin/with-contenv bash
+# shellcheck shell=bash
+# Copyright (c) 2019, PhysK
+# All rights reserved.
+
+echo "-> Copying rclone conf <-"
+
+cp /config/rclone.conf /config/rclone-docker.conf
+
+echo "-> Make needed edits to rclone conf <-"
+
+sed -i "s#/opt/appdata/plexguide/.blitzkeys/#/config/keys/#g" /config/rclone-docker.conf

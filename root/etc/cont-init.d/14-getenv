@@ -1,0 +1,33 @@
+#!/usr/bin/with-contenv bash
+# shellcheck shell=bash
+# Copyright (c) 2019, PhysK
+# All rights reserved.
+
+DIR_CACHE_TIME=${DIR_CACHE_TIME:-2m}
+VFS_READ_CHUNK_SIZE=${VFS_READ_CHUNK_SIZE:-96M}
+VFS_CACHE_MAX_AGE=${VFS_CACHE_MAX_AGE:-675h}
+VFS_READ_CHUNK_SIZE_LIMIT=${VFS_READ_CHUNK_SIZE_LIMIT:-1G}
+VFS_CACHE_MODE=${VFS_CACHE_MODE:-writes}
+BUFFER_SIZE=${BUFFER_SIZE:-48M}
+RC_ENABLED=${RC_ENABLED:-false}
+RC_ADDR=${RC_ADDR:-0.0.0.0:25975}
+RC_USER=${RC_USER:-user}
+RC_PASS=${RC_PASS:-xxx}
+POLL_INTERVAL=${POLL_INTERVAL:-5m}
+
+echo "
+Rclone ENV vars
+------------------------------------------------
+--dir-cache-time              ${DIR_CACHE_TIME}
+--vfs-read-chunk-size         ${VFS_READ_CHUNK_SIZE}
+--vfs-cache-max-age           ${VFS_CACHE_MAX_AGE}
+--vfs-read-chunk-size-limit   ${VFS_READ_CHUNK_SIZE_LIMIT}
+--vfs-cache-mode              ${VFS_CACHE_MODE}
+--buffer-size                 ${BUFFER_SIZE}
+--poll-interval               ${POLL_INTERVAL}
+--rc                          ${RC_ENABLED}
+--rc-addr                     ${RC_ADDR}
+--rc-user                     ${RC_USER}
+--rc-pass                     REDACTED
+------------------------------------------------
+"

@@ -1,0 +1,12 @@
+#!/usr/bin/with-contenv bash
+# shellcheck shell=bash
+
+# Copyright (c) 2019, PhysK
+# All rights reserved.
+
+# shellcheck disable=SC2086
+umask 022
+uploader_command="/app/gdrive/uploader.sh"
+sleep 10s
+echo "-> Starting gdrive Uploader <-"
+exec s6-setuidgid abc $uploader_command

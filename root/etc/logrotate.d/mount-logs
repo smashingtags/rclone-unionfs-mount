@@ -1,0 +1,7 @@
+/tmp/mount-*.log {
+    size 50M
+    rotate 2
+    noolddir
+	missingok
+	sharedscripts
+}

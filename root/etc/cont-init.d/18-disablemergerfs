@@ -1,0 +1,11 @@
+#!/usr/bin/with-contenv bash
+# shellcheck shell=bash
+# Copyright (c) 2019, PhysK
+# All rights reserved.
+
+DISABLE_MERGERFS=${DISABLE_MERGERFS:-false}
+
+if [ "${DISABLE_MERGERFS}" == "true" ]; then
+    touch /etc/services.d/mergerfs/down
+    echo "-> Disabled MergerFS <-"
+fi
